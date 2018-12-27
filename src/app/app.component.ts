@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { DataService } from './data.service'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,8 +31,10 @@ export class AppComponent {
   
 
   users:string[] = ['pepe', 'juan', 'jose']
-  name:string;
-  age: number;
+  name:string = 'jhon carter';
+  age: number = 28;
+  posts = [];
+
 
   sayHello(){
     alert('hola!');
@@ -43,6 +47,15 @@ export class AppComponent {
       }
     }    
 }
+
+constructor(private dataService: DataService){
+  this.dataService.getData().subscribe(data => {
+    //console.log(data)
+    this.posts = data;
+  })
+}
+
+
 
 addUser(newUser){
   this.users.push(newUser.value)
