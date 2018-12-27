@@ -27,7 +27,7 @@
   </ul>
 </div> -->
 
-<form (submit)='addUser(newUser)'>
+<!-- <form (submit)='addUser(newUser)'>
   <input type="text" #newUser>
   <button>crear usuario</button>
 </form>
@@ -57,4 +57,15 @@
     <p>{{post.body}}</p>
   </div>
 
-</div>
+</div> -->
+
+<ul>
+  <li>
+    <a routerLink='/'>home</a>
+  </li>
+  <li>
+      <a routerLink='/about'>about</a>
+    </li>
+</ul>
+
+<router-outlet></router-outlet>
