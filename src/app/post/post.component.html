@@ -1,0 +1,50 @@
+<div class="input">
+ 
+
+<form #form="ngForm" (ngSubmit)="setCenter($event)" ac>
+        <div>
+          <input type="text" name="latitude" [(ngModel)]="latitude" placeholder="Enter latitude" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="longitude" [(ngModel)]="longitude" placeholder="Enter longitude" required>
+        </div>
+        <button type="submit" [disabled]="form.invalid">Go</button>
+      </form>
+        <div #gmap style=”width:100%;height:400px”></div>
+</div>
+
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
+
+<script>
+    let address = angular.element(element.getElementById('address'))
+    let lat = angular.element(element.getElementById('lat'))
+    let lng = angular.element(element.getElementById('lng'))
+    function autoComplete(input, inputLat, inputLng){
+        const dropdown = new google.maps.places.Autocomplete(input)
+        dropdown.addListener('place_changed', ()=>{
+            let place = dropdown.getPlace()
+            console.log(place)
+            lat.value = place.geometry.location.lat()
+            lng.value = place.geometry.location.lng()
+        })
+    }
+    autoComplete(address, lat, lng)
+</script> -->
+
+
+<!-- <h1>Agrega un lugar</h1>
+<form action="/new" method="POST">
+    <p>
+        Address:
+        <input type="text" autocomplete="off" name="location[address]" id="address">
+    </p>
+    <p>
+        Latitude:
+        <input type="text" name="location[coordinates][1]" id="lat">
+    </p>
+    <p>
+        Longitude:
+        <input type="text" name="location[coordinates][0]" id="lng">
+    </p>
+</form>
+</div> -->

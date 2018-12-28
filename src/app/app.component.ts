@@ -8,7 +8,26 @@ import { DataService } from './data.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  //users = ['pepe', 'joe', 'omar', 'jhon'];
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//users = ['pepe', 'joe', 'omar', 'jhon'];
   //activated:boolean = true; //cuando es importante (typescript)
  
  
@@ -30,40 +49,37 @@ export class AppComponent {
   // }
   
 
-  users:string[] = ['pepe', 'juan', 'jose']
-  name:string = 'jhon carter';
-  age: number = 28;
-  posts = [];
+//   users:string[] = ['pepe', 'juan', 'jose']
+//   name:string = 'jhon carter';
+//   age: number = 28;
+//   posts = [];
 
 
-  sayHello(){
-    alert('hola!');
-  }
+//   sayHello(){
+//     alert('hola!');
+//   }
 
-  deleteUser(user){
-    for(let i = 0; i <this.users.length; i++){
-      if(user == this.users[i]){
-        this.users.splice(i,1)
-      }
-    }    
-}
+//   deleteUser(user){
+//     for(let i = 0; i <this.users.length; i++){
+//       if(user == this.users[i]){
+//         this.users.splice(i,1)
+//       }
+//     }    
+// }
 
-constructor(private dataService: DataService){
-  this.dataService.getData().subscribe(data => {
-    //console.log(data)
-    this.posts = data;
-  })
-}
-
-
-
-addUser(newUser){
-  this.users.push(newUser.value)
-  newUser.value = ''
-  newUser.focus()
-  //console.log(newUser.value)
-  return false;
-}
+// constructor(private dataService: DataService){
+//   this.dataService.getData().subscribe(data => {
+//     //console.log(data)
+//     this.posts = data;
+//   })
+// }
 
 
-}
+
+// addUser(newUser){
+//   this.users.push(newUser.value)
+//   newUser.value = ''
+//   newUser.focus()
+//   //console.log(newUser.value)
+//   return false;
+// }

@@ -1,0 +1,37 @@
+<div>
+  <div>
+    <h2>Login</h2>
+    <form (submit)='onSubmitLogin()'>
+      <input type="text" name="email" placeholder="Email" [(ngModel)]='email' id="email">
+      <input type="password" name="password" placeholder="Password" [(ngModel)]='password' id="password">
+      <button type="submit" id="login-button">Login</button>
+    </form>
+  </div>
+
+
+  <div>
+    <h2>Register</h2>
+    <form (submit)='onSubmitAddUser()'>
+      <input type="email" name="email" placeholder="Email" [(ngModel)]='email'>
+      <input type="password" name="password" placeholder="Password">
+      <input type="submit" id="register-button" placeholder="Registrar">
+    </form>
+  </div> 
+
+</div>
+
+
+
+<!-- <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBk3Z3SApT6QzOUteAB9HfFcZAxrQ49Uxc",
+    authDomain: "pruebas-cargamos.firebaseapp.com",
+    databaseURL: "https://pruebas-cargamos.firebaseio.com",
+    projectId: "pruebas-cargamos",
+    storageBucket: "pruebas-cargamos.appspot.com",
+    messagingSenderId: "274664875142"
+  };
+  firebase.initializeApp(config);
+</script> -->

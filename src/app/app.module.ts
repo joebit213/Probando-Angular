@@ -6,32 +6,45 @@ import { RouterModule, Route } from '@angular/router'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HolaMundoComponent } from './hola-mundo/hola-mundo.component';
-import { PepeComponent } from './pepe/pepe.component'
+import { CommonModule } from '@angular/common';
 
-import { DataService } from './data.service'
-import { AboutComponent } from './about/about.component';
+import { AuthComponent } from './auth/auth.component';
+import { MapComponent } from './map/map.component';
+import { PostComponent } from './post/post.component'
+
+import { AngularFireModule } from 'angularfire2'
+import { AngularFireAuthModule } from 'angularfire2/auth'
+import { AgmCoreModule } from '@agm/core';
+
+import { environment } from '../environments/environment'
+import { AuthService } from './servicios/auth.service'
 
 const routes: Route[]= [
-{path: '', component: HolaMundoComponent},
-{path: 'about', component: AboutComponent}
+{path: '', component: AuthComponent},
+{path: 'map', component: MapComponent},
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    HolaMundoComponent,
-    PepeComponent,
-    AboutComponent
+    AuthComponent,
+    MapComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyDaIwOMyM_ktCpJxJFQMD_ORmVtI9ycgoU',
+    libraries:['places']
+    })
   ],
-  providers: [DataService],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
